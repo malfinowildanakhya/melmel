@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffd6e0, #ffe0f0);
+  overflow-x: hidden;
+  color: #333;
+}
+
+.intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffccd5;
+  text-align: center;
+  padding: 20px;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  color: #c9184a;
+}
+
+.intro button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.container {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.hero h1 {
+  font-size: 2rem;
+  color: #ff4d6d;
+  min-height: 100px;
+}
+
+#galeri {
+  padding: 50px 20px;
+  text-align: center;
+  background: #fff0f0;
+}
+
+#galeri h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #d6336c;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+  margin-bottom: 40px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.surat {
+  padding: 40px 20px;
+  background: #ffe3e3;
+  text-align: center;
+}
+
+.surat-content {
+  margin-top: 20px;
+  max-width: 600px;
+  margin-inline: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.falling-flowers::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: url('https://i.ibb.co/kK63gC4/flower.png');
+  background-repeat: repeat;
+  background-size: 30px;
+  animation: fall 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes fall {
+  from { background-position: 0 -1000px; }
+  to { background-position: 0 1000px; }
+}
+
+/* Responsiveness for devices */
+@media (max-width: 768px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .intro button {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  #galeri h2 {
+    font-size: 1.5rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+
+  .surat-content {
+    padding: 15px;
+  }
+
+  .falling-flowers::before {
+    background-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro button {
+    padding: 8px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.2rem;
+  }
+
+  #galeri h2 {
+    font-size: 1.3rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  footer {
+    font-size: 0.7rem;
+  }
+}
